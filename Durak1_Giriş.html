@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHSOSYAL | Dijital Etik Panosu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        body {
+            background-color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1e293b;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .canvas-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(180px, auto);
+            gap: 1.5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .panel {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .accent-blue { color: #3b82f6; }
+        .accent-red { color: #ef4444; }
+        .accent-green { color: #10b981; }
+
+        .stat-large {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #f1f5f9;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .canvas-grid { grid-template-columns: repeat(6, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .canvas-grid { grid-template-columns: 1fr; }
+            .panel { grid-column: span 1 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="max-width-[1300px] mx-auto mb-10 text-center md:text-left px-4">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Sosyal Medya Etiği ve Dijital Davranışlar</h1>
+        <p class="text-slate-500 font-medium mt-2">TÜİK verilerine dayalı gençlerin dijital alışkanlıkları ve ahlaki pusulası</p>
+    </header>
+
+    <main class="canvas-grid">
+        
+        <!-- Panel 1: Internet Usage -->
+        <div class="panel col-span-12 md:col-span-4 flex flex-col justify-between">
+            <div>
+                <div class="icon-box bg-blue-50">
+                    <i class="fas fa-wifi accent-blue text-xl"></i>
+                </div>
+                <h3 class="font-bold text-slate-800">İnternet Kullanımı</h3>
+                <p class="text-sm text-slate-500 mt-1">Türkiye genelinde ve gençler arasında erişim oranları.</p>
+            </div>
+            <div class="mt-6">
+                <div class="flex items-end gap-2">
+                    <span class="stat-large accent-blue">96<small class="text-2xl">%</small></span>
+                    <span class="text-xs font-bold text-slate-400 mb-3 uppercase">16-24 Yaş Grubu</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 96%"></div></div>
+                <p class="text-xs mt-3 text-slate-400 italic">Genel nüfus oranı: ~%87.1 (2023 TÜİK)</p>
+            </div>
+        </div>
+
+        <!-- Panel 2: Social Media Usage -->
+        <div class="panel col-span-12 md:col-span-5">
+            <div class="icon-box bg-purple-50">
+                <i class="fas fa-mobile-alt text-purple-500 text-xl"></i>
+            </div>
+            <h3 class="font-bold text-slate-800">Sosyal Medya Kullanımı</h3>
+            <p class="text-sm text-slate-500 mt-1">En yaygın kullanım amaçları ve platform etkileşimi.</p>
+            
+            <div class="mt-6 grid grid-cols-2 gap-4">
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                    <i class="fas fa-comments text-purple-400 mb-2"></i>
+                    <h4 class="text-xs font-bold uppercase text-slate-400">İletişim</h4>
+                    <p class="text-sm font-semibold">Anlık Mesajlaşma</p>
+                </div>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                    <i class="fas fa-play-circle text-purple-400 mb-2"></i>
+                    <h4 class="text-xs font-bold uppercase text-slate-400">Tüketim</h4>
+                    <p class="text-sm font-semibold">Video/İçerik İzleme</p>
+                </div>
+            </div>
+            <div class="mt-4 flex gap-2">
+                <i class="fab fa-instagram text-slate-300"></i>
+                <i class="fab fa-youtube text-slate-300"></i>
+                <i class="fab fa-tiktok text-slate-300"></i>
+                <i class="fab fa-whatsapp text-slate-300"></i>
+            </div>
+        </div>
+
+        <!-- Panel 3: Device Access -->
+        <div class="panel col-span-12 md:col-span-3 flex flex-col justify-center items-center text-center bg-slate-900 text-white border-none">
+            <div class="text-5xl font-black mb-2 tracking-tighter">99.1%</div>
+            <h3 class="text-sm font-bold uppercase tracking-widest text-slate-400">Cihaz Erişimi</h3>
+            <p class="text-xs mt-4 text-slate-400 px-4">Hanelerin neredeyse tamamında en az bir cep telefonu bulunuyor.</p>
+            <div class="flex gap-4 mt-6 opacity-40">
+                <i class="fas fa-desktop"></i>
+                <i class="fas fa-tablet-alt"></i>
+                <i class="fas fa-laptop"></i>
+            </div>
+        </div>
+
+        <!-- Panel 6: Highlight Insight -->
+        <div class="panel col-span-12 md:col-span-8 bg-gradient-to-br from-blue-600 to-indigo-700 text-white border-none flex items-center justify-center p-8">
+            <div class="max-w-md text-center">
+                <i class="fas fa-quote-left text-3xl opacity-30 mb-4"></i>
+                <h2 class="text-2xl md:text-3xl font-extrabold leading-tight">
+                    Gençler dijital dünyada aktif, ancak etik farkındalık geliştirilmelidir.
+                </h2>
+                <div class="h-1 w-20 bg-white/30 mx-auto mt-6 rounded-full"></div>
+            </div>
+        </div>
+
+        <!-- Panel 4: Risks & Ethics -->
+        <div class="panel col-span-12 md:col-span-4">
+            <div class="icon-box bg-red-50">
+                <i class="fas fa-exclamation-triangle accent-red text-xl"></i>
+            </div>
+            <h3 class="font-bold text-slate-800">Riskler ve Etik Sorunlar</h3>
+            <ul class="mt-4 space-y-4">
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0"></span>
+                    <div>
+                        <span class="text-sm font-bold block">Bilgi Kirliliği (Dezenformasyon)</span>
+                        <p class="text-xs text-slate-400">Hızla yayılan yanlış haberler toplumu yanıltıyor.</p>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0"></span>
+                    <div>
+                        <span class="text-sm font-bold block">Siber Zorbalık</span>
+                        <p class="text-xs text-slate-400">Ekran arkasından yapılan saldırılar kalıcı yaralar açıyor.</p>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0"></span>
+                    <div>
+                        <span class="text-sm font-bold block">Mahremiyet İhlalleri</span>
+                        <p class="text-xs text-slate-400">Verilerin izinsiz paylaşımı güvenlik riski oluşturuyor.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Panel 5: Awareness Message -->
+        <div class="panel col-span-12 md:col-span-12 bg-emerald-50 border-emerald-100">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="icon-box bg-emerald-500 mb-0">
+                        <i class="fas fa-lightbulb text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-emerald-900 text-lg">Ne Yapmalıyız?</h3>
+                        <p class="text-sm text-emerald-700">Güvenli ve etik bir dijital dünya için 3 adım.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow max-w-3xl">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-pause-circle text-emerald-500 text-2xl"></i>
+                        <span class="text-sm font-bold text-emerald-800">Paylaşmadan Önce Düşün</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-search text-emerald-500 text-2xl"></i>
+                        <span class="text-sm font-bold text-emerald-800">Kaynağı Kontrol Et</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-hand-holding-heart text-emerald-500 text-2xl"></i>
+                        <span class="text-sm font-bold text-emerald-800">Her Koşulda Saygılı Ol</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="max-width-[1300px] mx-auto mt-10 px-4 text-center text-slate-400 text-xs">
+        <p>© 2024 AHSOSYAL Projesi | Veri Kaynağı: TÜİK Hanehalkı Bilişim Teknolojileri Kullanım Araştırması</p>
+    </footer>
+
+</body>
+</html>
